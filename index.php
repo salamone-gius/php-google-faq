@@ -1,3 +1,8 @@
+<?php
+    require_once __DIR__ . '/server/database.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -8,6 +13,13 @@
         <title>Google Faq</title>
     </head>
     <body>
-        
+        <main>
+            <div class="container">
+                <?php foreach ($database as $post) { ?>
+                    <?php echo $post["question"]; ?>
+                    <?php echo $post["answer"]; ?>
+                <?php } ?>
+            </div>
+        </main>      
     </body>
 </html>
